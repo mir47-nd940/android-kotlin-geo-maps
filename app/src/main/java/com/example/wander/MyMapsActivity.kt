@@ -41,8 +41,15 @@ class MyMapsActivity : AppCompatActivity(), OnMapReadyCallback {
         map = googleMap
 
         val home = LatLng(-26.206184, 28.062155)
-        map.moveCamera(CameraUpdateFactory.newLatLngZoom(home, 10f))
+        map.moveCamera(CameraUpdateFactory.newLatLngZoom(home, 18f))
         map.addMarker(MarkerOptions().position(home))
+
+        val overlaySize = 100f
+        val androidOverlay = GroundOverlayOptions()
+            .image(BitmapDescriptorFactory.fromResource(R.drawable.android))
+            .position(home, overlaySize)
+        map.addGroundOverlay(androidOverlay)
+
         setMapLongClick(map)
         setPoiClick(map)
         setMapStyle(map)
@@ -88,6 +95,7 @@ class MyMapsActivity : AppCompatActivity(), OnMapReadyCallback {
                     .position(latLng)
                     .title(getString(R.string.dropped_pin))
                     .snippet(snippet)
+                    .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE))
             )
         }
     }
