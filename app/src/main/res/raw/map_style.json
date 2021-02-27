@@ -78,15 +78,6 @@
     ]
   },
   {
-    "featureType": "poi.attraction",
-    "elementType": "geometry.fill",
-    "stylers": [
-      {
-        "color": "#dff300"
-      }
-    ]
-  },
-  {
     "featureType": "poi.park",
     "elementType": "geometry.fill",
     "stylers": [
@@ -118,7 +109,7 @@
     "elementType": "geometry.fill",
     "stylers": [
       {
-        "color": "#ff4ff6"
+        "color": "#0ea20b"
       }
     ]
   },
